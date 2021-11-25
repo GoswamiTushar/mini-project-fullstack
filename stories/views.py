@@ -1,11 +1,23 @@
 from django.shortcuts import render
 from . import forms
+from datetime import datetime
+from django.contrib import messages
+from .models import Story
 
 
-def story_upload(request):
+def story_form(request):
     # story_form = forms.StoryForm()
     if request.method == 'POST':
-        story_form = forms.StoryForm(request.POST)
-        if story_form.is_valid():
-            story_form.save()
-    return render(request, "story_detail.html")
+        title = request.POST.get('title')
+        body = request.POST.get('story')
+        name = request.POST.get('name')
+        story_form = Story(title=title, body=body,
+                           name=name)
+        story_form.save()
+        messages.success(request, "Thank you for submitting your story")
+    return render(request, "story_form.html")
+
+
+def stories_shared(request):
+    stories = Story.objects.all()
+    return render(request, "story_detail.html", {'stories': stories})

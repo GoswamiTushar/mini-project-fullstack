@@ -1,11 +1,28 @@
-{% {% extends 'base.html' %} %}
-{% block content %}
+{% extends 'base.html' %}
+{% load static %}
+{% block container %}
 
-<h2>Post a Story</h2>
-<form method="post">
-    {{ story_form.as_p }}
-    {% csrf_token %}
-    <button type="submit">SUBMIT</button>
-</form>
+<div class="container mb-3">
+    <h1 class="text-center">CONTACT US</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">TITLE</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter the title">
+        </div>
 
-{% endblock content %}
+        <div class="form-group">
+            <label for="body">Story</label>
+            <input type="text" class="form-control" id="body" placeholder="Tell us your story!" name="body">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Author Name">
+        </div>
+
+        <button class="btn btn-primary my-3" type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock container %}

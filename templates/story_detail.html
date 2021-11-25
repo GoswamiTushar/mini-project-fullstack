@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block container %}
+
+<section class="story_details">
+    {% for story in stories %}
+    {{ story.title }}
+    {{story.body}}
+    {{story.name}}
+    {% endfor %}
+</section>
+
+{% endblock %}
