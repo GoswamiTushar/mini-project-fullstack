@@ -18,6 +18,6 @@ def story_form(request):
     return render(request, "story_form.html")
 
 
-def stories_shared(request):
+def stories_list(request):
     stories = Story.objects.all()
-    return render(request, "story_detail.html", {'stories': stories})
+    return render(request, "story_list.html", {'stories': stories})
