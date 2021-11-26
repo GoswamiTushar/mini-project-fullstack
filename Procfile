@@ -1,1 +1,1 @@
-web: gunicorn CCMSS.wsgi --log-file -
+web: gunicorn CCMSS.wsgi:application --log-file - --log-level debug

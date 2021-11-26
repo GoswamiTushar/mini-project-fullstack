@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-owp)%_4x1g%4v=-z5&_f6m0+ipqjcx)6_hgsv!x=t73m12-v3*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.1', 'talk-2-us-project.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'talk-2-us-project.herokuapp.com']
 
 
 # Application definition
@@ -129,8 +129,10 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join('static'),
+    os.path.join(BASE_DIR, 'static'),
 )
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ASGI_APPLICATION = 'core.routing.application'
 
