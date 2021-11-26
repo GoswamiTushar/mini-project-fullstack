@@ -6,6 +6,7 @@
 {% block container %}
 
 <section class="story_details">
+    <button><a href="{% url 'stories:story_form' %}">Submit your story</a></button>
     {% for story in stories %}
     {{ story.title }}
     {{story.body}}
