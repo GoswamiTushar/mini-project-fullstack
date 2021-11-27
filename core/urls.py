@@ -28,9 +28,9 @@ def index(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='home'),
-    path('chat/', include('chat.urls')),
     path('blogs/', include('blog.urls')),
     path('stories/', include('stories.urls')),
+    path('chat/', include('chat.urls')),
     url(r'^media/(?P<path>.*)$', serve,
         {'document_root':       settings.MEDIA_ROOT}),
     url(r'^static/(?P<path>.*)$', serve,

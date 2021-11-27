@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 
-def index(request):
-    return render(request, 'index.html', {})
+def chat(request):
+    return redirect('/chat/12345/')
 
 
 def room(request, room_name):

@@ -45,6 +45,11 @@ body {
     }
 
 
+.story_details > a{
+    color: black;
+}
+
+
 
 h1,
 h2,
