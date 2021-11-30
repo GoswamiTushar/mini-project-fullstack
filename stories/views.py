@@ -8,7 +8,7 @@ from .models import Story
 def story_form(request):
     # story_form = forms.StoryForm()
     if request.method == 'POST':
-        title = request.POST.get('title')
+        title = request.POST.get('title').upper()
         body = request.POST.get('story')
         name = request.POST.get('name')
         story_form = Story(title=title, body=body,
