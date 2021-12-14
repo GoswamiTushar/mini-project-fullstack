@@ -7,16 +7,17 @@
             <form>
                 <div class="form-group">
                     <div><label for="exampleFormControlTextarea1" class="h4 pt-5">Chatroom</label></div>
-                    <div><textarea class="form-control" id="chat-text" rows="10"
-                            style="width: 100%; height: 80%"></textarea><br></div>
+                    <div><textarea class="form-control" id="chat-text" rows="30" cols="50"></textarea>
+                        </textarea><br></div>
                 </div>
-                <div class="form-group">
-                    <input class="form-control" id="input" type="text"></br>
-                </div>
-                <input class="btn btn-secondary btn-lg btn-block" id="submit" type="button" value="Send">
-            </form>
         </div>
+        <div class="form-group">
+            <div><input class="form-control" id="input" type="text"></br></div>
+        </div>
+        <input class="btn btn-secondary btn-lg btn-block" id="submit" type="button" value="Send">
+        </form>
     </div>
+</div>
 </div>
 
 {{ request.user.username|json_script:"user_username" }}
